@@ -1,23 +1,53 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Game</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}A Game{% endblock %}
+{% block body%}
     <form action="/madlib">
-        <label>
-            Name of person: <input type="text" name="person">
-        </label>
-        <label>
-            Color: <input type="text" name="color">
-        </label>
-        <label>
-            Noun: <input type="text" name="noun">
-        </label>
-        <label>
-            Adjective: <input type="text" name="adjective">
-        </label>
-        <input type="submit">
+        <table>
+            <tr>
+                <td>
+                    <label>Name of person: </label>
+                </td>
+                <td>
+                    <input type="text" name="person">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Color: </label>
+                </td>
+                <td>
+                    <input type="text" name="color">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Noun: </label>
+                </td>
+                <td>
+                    <input type="text" name="noun">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Verb: </label>
+                </td>
+                <td>
+                    <input type="checkbox" name="verb" value="float">float
+                    <input type="checkbox" name="verb" value="dribble">dribble
+                    <input type="checkbox" name="verb" value="brush">brush
+                    <input type="checkbox" name="verb" value="roar">roar
+                    <input type="checkbox" name="verb" value="tumble">tumble
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Adjective: </label>
+                </td>
+                <td>
+                    <input type="text" name="adjective">
+                </td>
+            </tr>       
+        </table>
+        <input type="submit" value="        submit">
     </form>
-</body>
-</html>
+{% endblock %}
