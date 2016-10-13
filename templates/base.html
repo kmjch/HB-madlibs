@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <title>{% block title%}FAKE TITLE{% endblock %}</title>
+    {% block head%}
+    {% endblock %}
     <link rel="stylesheet" href="/static/madlibs.css">
+    <title>{% block title%}FAKE TITLE{% endblock %}</title>
 </head>
 <body>
     {% block body %}BODY TXT{% endblock %}

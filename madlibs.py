@@ -1,4 +1,4 @@
-from random import choice
+from random import sample, choice
 
 from flask import Flask, render_template, request
 
@@ -32,11 +32,11 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliments = sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
                            person=player,
-                           compliment=compliment)
+                           compliments=compliments)
 
 @app.route('/game')
 def show_madlib_form():
@@ -54,9 +54,13 @@ def show_madlib():
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
     verbs = request.args.getlist("verb")
+    adverb = request.args.get("adverb")
+    secret = request.args.get("secret")
 
-    return render_template("madlib.html", person=person, color=color, noun=noun, 
-                           adjective=adjective, verbs=verbs)
+    madlib = choice(["madlib.html", "madlib2.html", "madlib3.html"])
+
+    return render_template(madlib, person=person, color=color, noun=noun, 
+                           adjective=adjective, verbs=verbs, adverb=adverb, secret=secret)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

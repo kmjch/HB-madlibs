@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}A Game{% endblock %}
-{% block body%}
+{% block body %}
     <form action="/madlib">
         <table>
             <tr>
@@ -16,7 +16,11 @@
                     <label>Color: </label>
                 </td>
                 <td>
-                    <input type="text" name="color">
+                    <select name="color">
+                        <option value="sparkle">sparkle</option>
+                        <option value="mauve">mauve</option>
+                        <option value="aquamarine">aquamarine</option>
+                        <option value="orange">orange</option>
                 </td>
             </tr>
             <tr>
@@ -46,7 +50,26 @@
                 <td>
                     <input type="text" name="adjective">
                 </td>
-            </tr>       
+            </tr> 
+            <tr>
+                <td>
+                    <label>Adverb: </label>
+                </td>
+                <td>
+                    <input type="radio" name="adverb" value="lazily">lazily
+                    <input type="radio" name="adverb" value="clumsily">clumsily
+                    <input type="radio" name="adverb" value="proudly">proudly
+                    <input type="radio" name="adverb" value="happily">happily
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Deepest Darkest Secret: </label>
+                </td>
+                <td>
+                    <textarea name="secret"></textarea>
+                </td>
+            </tr>      
         </table>
         <input type="submit" value="        submit">
     </form>

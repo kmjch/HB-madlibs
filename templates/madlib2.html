@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %}A Madlib{% endblock %}
+
+    {% block body %}
+        <h1>Your Madlib</h1>
+        {{ person }} was a {{ color }}-eyed person. They liked to take their {{ noun }} to the beach.
+        {% if verbs %}
+            {% for verb in verbs %}
+                They would {{ verb }}.
+            {% endfor %}
+        {% endif %}
+        Sometimes they would {{ adverb }} dance to their {{ adjective }} song.
+        <br>
+        <br>
+        <br>
+        <em id="secret">{{ secret }}</em>
+
+    {% endblock %}

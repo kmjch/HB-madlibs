@@ -5,10 +5,18 @@
 
     {% block body %}
         <h1>Your Madlib</h1>
-        There once was a person named {{ person }}. Their hair was {{ color }} and their pants were {{ adjective }}.  During lunch, they ate {{ noun }}.
+        There once was a person named {{ person }}. Their hair was {{ color }} and their pants were {{ adjective }}.  During lunch, they {{ adverb }} ate {{ noun }}.
         {% if verbs %}
-            {% for verb in verbs %}
-                They liked to {{ verb }}.
-            {% endfor %}
+            They liked to {{ verbs[0] }}
+            {% for verb in verbs[1:] %}
+                and {{ verb }}{% endfor %}.
         {% endif %}
+        {% if verbs[5] %}
+        <p>Hi!</p>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+        <em id="secret">{{ secret }}</em>
+
     {% endblock %}

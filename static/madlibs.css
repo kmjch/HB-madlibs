@@ -22,3 +22,6 @@ input[type="submit"] {
     height: 128px;
     width: 128px;
 }
+em#secret {
+    color: white;
+}

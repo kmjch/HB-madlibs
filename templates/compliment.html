@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}A Compliment{% endblock %}
 {% block body %}
-    Hi {{ person }}! I think you're {{ compliment }}!
+    Hi {{ person }}! I think you're {{ compliments[0] }}, {{ compliments[1] }}, and {{ compliments[2] }}.
     <form action="/game">
         <label for="game">Would you like to play a game?
         <input type="radio" name="game" value="yes" required>Yes
